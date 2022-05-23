@@ -55,7 +55,7 @@
                     <div class="footer-col fourth" style="width: max-content;">
                         <h5>Domande frequenti</h5>
                         <ul class="list-unstyled li-space-lg p-small">
-                            <li><a href="#your-link">Leggi le FAQ</a></li>
+                            <li><a href="{{route('faq')}}">Leggi le FAQ</a></li>
                         </ul>
                     </div>
                 </div> 

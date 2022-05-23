@@ -36,3 +36,7 @@ Route::get('/public_catalog', function () {
 Route::get('/registrati', function () {
     return view('registrati');
 })->name('registrati');
+
+Route::get('/faq', function () {
+    return view('faq');
+})->name('faq');
