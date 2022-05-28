@@ -1,5 +1,6 @@
 <?php
 
+namespace App\Http\Controllers\FaqsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,7 @@ Route::get('/', function () {
     return view('home');
 })->name('home'); 
 
+
 Route::get('/accedi', function () {
     return view('accedi');
 })->name('accedi');
@@ -29,14 +31,20 @@ Route::get('/terminiecondizioni', function () {
     return view('terminiecondizioni');
 })->name('terminiecondizioni');
 
-Route::get('/public_catalog', function () {
-    return view('public_catalog');
-})->name('public_catalog');
-
 Route::get('/registrati', function () {
     return view('registrati');
 })->name('registrati');
 
-Route::get('/faq', function () {
-    return view('faq');
-})->name('faq');
+Route::get('/locatariocatalog', function () {
+    return view('locatario_catalog');
+})->name('locatariocatalog');
+
+Route::get('/chisiamo', function () {
+    return view('chisiamo');
+})->name('chisiamo');
+
+Route::get('/faqs','App\Http\Controllers\FaqsController@index')
+->name('faqs');
+
+Route::get('/public_catalog','App\Http\Controllers\AnnunciController@index')
+->name('public_catalog');

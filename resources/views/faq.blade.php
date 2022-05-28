@@ -14,24 +14,12 @@
 
 <div class="form-container" style="margin: auto; max-width: 60%; margin-bottom: 10em;">
     <ul class="list-group list-group-flush">
+        @foreach($faqs as $faq)
         <li class="list-group-item">
-            <h4>Come si fa ad opzionare un appartamento/posto letto?</h4>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod ullamcorper ex, eget rutrum massa faucibus quis. Morbi egestas faucibus imperdiet. In hac habitasse platea dictumst. Morbi sapien massa, cursus nec justo at, aliquam commodo sapien. Aenean porta turpis sed dapibus tempor. Morbi malesuada sem eros, vitae faucibus turpis feugiat suscipit.
-            </p>
+            <h4>{{$faq->domanda}}</h4>
+            <p>{{$faq->risposta}}</p>
         </li>
-        <li class="list-group-item">
-            <h4>Come si può contattare il proprietario di un immobile?</h4>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod ullamcorper ex, eget rutrum massa faucibus quis. Morbi egestas faucibus imperdiet. In hac habitasse platea dictumst. Morbi sapien massa, cursus nec justo at, aliquam commodo sapien. Aenean porta turpis sed dapibus tempor. Morbi malesuada sem eros, vitae faucibus turpis feugiat suscipit.
-            </p>
-        </li>
-        <li class="list-group-item">
-            <h4>Come ci si registra?</h4>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod ullamcorper ex, eget rutrum massa faucibus quis. Morbi egestas faucibus imperdiet. In hac habitasse platea dictumst. Morbi sapien massa, cursus nec justo at, aliquam commodo sapien. Aenean porta turpis sed dapibus tempor. Morbi malesuada sem eros, vitae faucibus turpis feugiat suscipit.
-            </p>
-        </li>
+        @endforeach
     </ul>
 </div>
 

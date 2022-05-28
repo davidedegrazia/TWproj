@@ -1,24 +1,52 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
+
+<head>
 
 
     <!-- Webpage Title -->
     <title>AirStudents</title>
-    
+
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/fontawesome-all.css" rel="stylesheet">
     <link href="css/swiper.css" rel="stylesheet">
-	<link href="css/magnific-popup.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
-	
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 
-    @include('layouts/public_navbar')
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand logo-image" href="{{route('home')}}"><img src="images/logo.png"></a>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#description">CHI SIAMO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="{{ route('accedi') }}">CATALOGO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="##">CHAT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="##">IL TUO PROFILO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="##">ESCI
+                        </a>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+
     @yield('content')
-    
-    
+
+
     <!-- Footer -->
     <div class="footer">
         <div class="container foot">
@@ -44,23 +72,23 @@
                                 <div class="media-body"><a href="#your-link">+071 459 8765</a></div>
                             </li>
                         </ul>
-                    </div> 
+                    </div>
                     <div class="footer-col third" style="margin-right: 5em;">
                         <h5>Link utili</h5>
                         <ul class="list-unstyled li-space-lg p-small">
                             <li><a href="{{route('terminiecondizioni')}}">Termini e Condizioni</a></li>
                             <li><a href="{{route('privacypolicy')}}">Informativa sulla Privacy</a></li>
                         </ul>
-                    </div> 
+                    </div>
                     <div class="footer-col fourth" style="width: max-content;">
                         <h5>Domande frequenti</h5>
                         <ul class="list-unstyled li-space-lg p-small">
-                            <li><a href="{{route('faqs')}}">Leggi le FAQ</a></li>
+                            <li><a href="{{route('faq')}}">Leggi le FAQ</a></li>
                         </ul>
                     </div>
-                </div> 
-            </div> 
-        </div> 
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -70,12 +98,12 @@
             <div class="row">
                 <div class="col-lg-12">
                     <p class="p-small">Copyright © 2022 - Gruppo TW22</p>
-                </div> 
-            </div> 
-        </div> 
-    </div> 
-    
-    	
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Scripts -->
     <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
@@ -85,7 +113,7 @@
     <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
     <script src="js/scripts.js"></script> <!-- Custom scripts -->
-</body>
-    
-    
+    </body>
+
+
 </html>

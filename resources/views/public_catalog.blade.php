@@ -14,34 +14,53 @@
                     </div>
                 </header>
                 <ul class="list-group list-group-flush">
+                    @foreach($annunci as $annuncio)
                     <li class="list-group-item">
                         <div class="media align-items-lg-center flex-column flex-lg-row p-3">
-                            <img src="images/cane.jpg" alt="Generic placeholder image" width="170" height="170" class=" order-1 order-lg-1">
+                            <img src="images/{{$annuncio->foto}}.jpg" alt="Generic placeholder image" width="170" height="170" class=" order-1 order-lg-1">
                             <div class="media-body order-2 order-lg-1" style="padding-left: 2em;">
-                                <h4 class="mt-0 font-weight-bold mb-2">Via Montenapoleone 56</h4>
+                                <h4 class="mt-0 font-weight-bold mb-2">{{$annuncio->via}} {{$annuncio->civico}}</h4>
                                 <div class="d-flex align-items-center justify-content-between mt-1">
-                                    <h6 class="font-weight-bold my-2">€670/mese</h6>
+                                    <h6 class="font-weight-bold my-2">€{{$annuncio->prezzo}}/mese</h6>
                                 </div>
                                 <p>
-                                    <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 0.8em;">
+                                    <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseExample{{$annuncio->id}}" aria-expanded="false" aria-controls="collapseExample" style="margin-top: 0.8em;">
                                         Altri dettagli
                                     </button>
                                 </p>
-                                <div class="collapse" id="collapseExample">
+                                <div class="collapse" id="collapseExample{{$annuncio->id}}">
                                     <div class="card card-body">
-                                        Situato nel centro storico, in zona tranquilla e silenziona, casa singola ristrutturata integralmente recuperando i materiali esistenti, elegante interamente ed elegantemente arredato.
-                                        L'immobile ha una superficie commerciale di circa 120 mq. Ristrutturato partendo dalle fondamenta, dispone di portoni blindati, finestre in legno con doppio vetro a taglio termicoi;
-                                        E' subito disponibile e da subito abitabile. 
+                                        {{$annuncio->descrizione}}
+                                        
+                                        @if($annuncio->tipologia == 'Posto Letto')
+                                        <p> <br> <br> Tipologia: {{$annuncio->tipologia}} in {{$annuncio->tipo_postoletto}}</p>
+                                        @else <p> <br> <br> Tipologia: {{$annuncio->tipologia}} </p>
+                                        @endif
 
-                                        <p> <br> <br> Tipologia: appartamento intero </p>
-                                        <p> Superficie: 120 mq</p>
-                                        <p> Camere: 3 </p>
-                                        <p> Posti letto: 4</p>
-                                        <p>
+                                        
+                                        <p> Disponibilità dal {{$annuncio->inizio_disp}} al {{$annuncio->fine_disp}}</p>
+                                        <p> <br> Caratteristiche dell'appartamento:</p>
+                                        <p> Superficie: {{$annuncio->superficie}} mq</p>
+                                        <p> Camere: {{$annuncio->n_camere}} </p>
+                                        <p> Posti letto: {{$annuncio->posti_letto}}</p>
+                                        <p> Bagni: {{$annuncio->n_bagni}}</p>
+                                        <p> Altri servizi:
                                             <ul>
+                                                @if($annuncio->zona_comune == 1)
+                                                <li> Zona comune</li>
+                                                @endif
+                                                @if($annuncio->angolo_studio  == 1)
+                                                <li> Angolo studio</li>
+                                                @endif
+                                                @if($annuncio->balcone  == 1)
                                                 <li> Balcone</li>
-                                                <li> Cucina</li>
+                                                @endif
+                                                @if($annuncio->wi_fi  == 1)
                                                 <li> Wi-Fi</li>
+                                                @endif
+                                                @if($annuncio->cucina  == 1)
+                                                <li> Cucina</li>
+                                                @endif
                                             </ul>
                                     </div>
                                     </p>
@@ -49,12 +68,11 @@
                             </div>
                         </div>
                     </li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                    <li class="list-group-item">A fourth item</li>
-                    <li class="list-group-item">And a fifth one</li>
+                    @endforeach
+
                 </ul>
             </div>
+
         </div>
     </div>
 </div>
